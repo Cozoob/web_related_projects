@@ -1,0 +1,156 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-size: 0;
+    width: 90%;
+    margin: 2% auto;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(233, 233, 233);
+}
+
+.title{
+    text-align: center;
+    font-size: 2.8rem;
+    background: -webkit-linear-gradient(180deg, #007500, #00e900);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 2rem;
+    margin-bottom: 5rem;
+}
+
+.container{
+    margin-top: 5rem;
+    font-size: 1rem;
+    display: flex;
+    flex-basis: 48%;
+}
+
+.text{
+    width: 100%;
+    padding: 1rem 5rem 1rem 1rem;
+    text-align: justify;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 180%;
+}
+
+.readmore{
+    font-size: 1.1rem;
+    width: fit-content;
+    background: -webkit-linear-gradient(180deg, #007500, #00e900);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding-top: 2rem;
+    border-bottom: 1px solid green;
+    display: flex;
+}
+
+.readmore > a > div {
+    float: left;
+}
+
+.readmore > a > i{
+    float: right;
+}
+
+.text h1{
+    font-size: 1.3rem;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+}
+
+.pics{
+    box-sizing: content-box;
+    width: 130%;
+    height: 25rem;
+    display: block;
+    position: relative;
+    padding: 5rem 0;
+}
+
+.pics > img{
+    width: 60%;
+    height: auto;
+    position: absolute;
+    border-radius: 20px;
+    box-shadow: 0 0 20px black;
+    transition: all 0.3s ease-in-out;
+}
+
+.pics > img:hover{
+    cursor: pointer;
+    padding: 1.2rem;
+    outline: 12px solid #00a800;
+    box-shadow: none;
+    z-index: 4;
+    transition: all 0.3s ease-in-out;
+    transform: scale(1.2);
+}
+
+.pics > img:hover ~ img{
+    transform: scale(0.9);
+    transition: all 0.3s ease-in-out;
+}
+
+.image1{
+    left: 5%;
+    top: 5%;
+    z-index: 1;
+}
+
+.image2{
+    right: 8%;
+    top: 12%;
+    z-index: 2;
+}
+
+.image3{
+    left: 12%;
+    top: 22%;
+    z-index: 3;
+}
+
+@media (max-width: 1000px){
+
+    .container{
+        flex-direction: column;
+        flex-basis: 100%;
+    }
+
+    .pics{
+        width: 100%;
+    }
+}
+
+@media  (max-width: 800px){
+    .title{
+        font-size: 2.5rem;
+
+    }
+    .container{
+        font-size: 0.9rem;
+    }
+    .text h1{
+        font-size: 1.2rem;
+    }
+}
+
+@media  (max-width: 600px){
+    .title{
+        font-size: 2rem;
+
+    }
+    .container{
+        font-size: 0.8rem;
+    }
+    .text h1{
+        font-size: 1.1rem;
+    }
+}

@@ -1,0 +1,170 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: justify;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    font-size: 0;
+    width: 70%;
+    margin: 2% auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.card {
+    flex-basis: 30%;
+    min-width: 120px;
+    height: 550px;
+    background-color: white;
+    box-shadow: 10px 20px 10px 0 grey;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    overflow: hidden;
+    display: grid;
+    grid-template-rows: 40% 40% 20%;
+}
+
+.card > div:first-of-type {
+    overflow: hidden;
+    box-shadow: inset 0 -10px 10px 1px rgba(0, 0, 0, 0.459);
+}
+
+.pic {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    overflow: hidden;
+}
+
+.pic img {
+    object-fit: cover;
+    min-width: 100%;
+    min-height: 100%;
+    display: block;
+}
+
+.header1 {
+    padding: 2% 5%;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.header2 {
+    padding: 0 5% 2%;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #73030D;
+}
+
+.description {
+    padding: 5% 5% 10%;
+    font-size: 0.8rem;
+}
+
+.bottom {
+    padding: 5%;
+    font-size: 0.76rem;
+    display: inline-block;
+    width: 100%;
+    border-top: 2px dashed #F22738;
+}
+
+.button {
+    position: static;
+    float: left;
+    padding: 5%;
+    background-color: #F22738;
+    text-align: center;
+    color: white;
+    transition: all 0.5s ease-out;
+}
+
+.button:hover {
+    background-color: #73030D;
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.media {
+    display: block;
+    float: right;
+    margin: 5% 0 5% 5%;
+}
+
+.up-media {
+    float: left;
+}
+
+.down-media {
+    float: left;
+}
+
+.commenticon {
+    float: left;
+    width: 13%;
+    height: 13%;
+    margin-right: 5%;
+}
+
+picture > img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+@media screen and (max-width: 1300px) {
+    .button {
+        float: inherit;
+    }
+    .button:hover {
+        transform: scale(1.05);
+    }
+
+    .media {
+        margin-top: 5%;
+        float: none;
+    }
+}
+
+@media screen and (max-width: 1023px) {
+    .card {
+        flex-basis: 45%;
+    }
+
+}
+
+@media screen and (max-width: 650px) {
+    .card {
+        flex-basis: 90%;
+        margin-bottom: 10%;
+    }
+    .button {
+        float: left;
+    }
+    .media {
+        float: right;
+    }
+    .header1 {
+        font-size: 1.2rem;
+    }
+    .header2 {
+        font-size: 1.1rem;
+    }
+    .description {
+        font-size: 0.76rem;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .button {
+        float: inherit;
+    }
+    .media {
+        float: inherit;
+    }
+}
