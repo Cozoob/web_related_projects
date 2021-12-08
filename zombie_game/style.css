@@ -1,0 +1,61 @@
+*{
+    text-align: center;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    height: 800px;
+    background: #aaa;
+    overflow: hidden;
+    position: relative;
+    cursor: crosshair;
+}
+
+.zombiearea {
+    cursor: crosshair;
+    height: 800px;
+    background: #aaa;
+    overflow: hidden;
+    background-image: url("board-bg.jpg");
+}
+
+.zombie {
+    cursor: crosshair;
+    width: 200px;
+    height: 312px;
+    background: url(walkingdead.png);
+    position: absolute;
+    left: 110%;
+    bottom: 300px;
+    animation: zombieAnim 0.5s 0s infinite steps(9),
+                zombieWalk 10s 0s 1 linear;
+
+}
+
+.score {
+    position: absolute;
+    text-align: center;
+    left: 15%;
+    top: 5%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 50px;
+    font-weight: 700;
+    padding: 5px;
+}
+
+
+@keyframes zombieAnim {
+    100% {
+        background-position: -1800px 0;
+    }
+}
+
+@keyframes zombieWalk {
+    100% {
+        left: -300px;
+    }
+}

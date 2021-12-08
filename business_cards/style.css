@@ -1,0 +1,103 @@
+*{
+    text-align: center;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: black;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: rgb(205, 207, 218);
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.container > header{
+    font-size: 3.5rem;
+    padding: 1vw 1vh;
+    border-bottom: 2px solid teal;
+}
+
+.card{
+    margin: 5rem;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    align-items: center;
+}
+
+.card *{
+    background-color: white;
+    max-width: 700px; 
+}
+
+.card > figure > picture > img{
+    margin-top: 2rem;
+    width: 25%;
+    border-radius: 300px;
+    box-shadow: 1vw -0.5vw teal;
+}
+
+.card > figure > figcaption > p:last-of-type{
+    margin-top: 0.2rem;
+    color: teal;
+    font-weight: 600;
+}
+
+.description{
+    min-height: 170px;
+    padding: 1rem;
+    width: 80%;
+}
+
+.arrows{
+    padding: 1rem;
+    font-size: 1.3rem;
+}
+
+.arrows > i{
+    transition: all ease-in-out 0.2s;
+}
+
+.arrows > i:hover{
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+.randomchoice{
+    background-color: rgb(190, 255, 255);
+    border: 2px solid teal;
+    border-radius: 10px;
+    padding: 4px;
+    margin: 1rem;
+    transition: all ease-in-out 0.2s;
+}
+
+.randomchoice:hover{
+    transform: scale(1.05);
+    cursor: pointer;
+    background-color: rgb(156, 206, 206);
+}
+
+@media(max-width: 800px){
+    .card *{
+        font-size: 0.8rem;
+    }
+
+    .container header{
+        font-size: 2.5rem;
+    }
+}
+
+@media(max-width: 500px){
+    .card *{
+        font-size: 0.6rem;
+    }
+
+    .container header{
+        font-size: 1.5rem;
+    }
+}
