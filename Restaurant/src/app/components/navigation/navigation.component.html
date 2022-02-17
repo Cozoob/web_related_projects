@@ -1,0 +1,14 @@
+<div>
+  <nav>
+    <ul>
+      <a routerLink="/home" routerLinkActive="active"><li>Home</li></a>
+      <a routerLink="/menu" routerLinkActive="active"><li>Menu</li></a>
+      <a routerLink="/basket" routerLinkActive="active" *ngIf="user"><li>Basket <p class="circle" [ngClass]="{'circle-blue': numberOfCurrentOrderedDishes >= 10}" *ngIf="numberOfCurrentOrderedDishes > 0" >{{numberOfCurrentOrderedDishes}}</p></li></a>
+      <a routerLink="/logging" routerLinkActive="active" *ngIf="!user"><li>Log in</li></a>
+      <a routerLink="/admin-tools" routerLinkActive="active" *ngIf="user && (user.isAdmin || user.isManager)"><li>Tools</li></a>
+      <a><li *ngIf="user">{{user.username}}</li></a>
+      <a routerLink="/logging" *ngIf="user" (click)="logOut()"><li>Log out</li></a>
+      <a routerLink="/registration" routerLinkActive="active" *ngIf="!user"><li>Sign up</li></a>
+    </ul>
+  </nav>
+</div>

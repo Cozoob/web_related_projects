@@ -1,0 +1,13 @@
+<div class="wrapper">
+  <div class="container">
+    <ng-container *ngFor="let u of this.usersArray">
+      <div class="user-card" *ngIf="user && u.key != user.key">
+        <span>{{u.username | uppercase}}</span>
+        <button (click)="changeIsBanned(u)" [ngClass]="u.isBanned ? 'ban-activated-button': 'ban-button' ">{{u.isBanned ? 'UNBAN' : 'BAN'}}</button>
+        <button (click)="changeIsClient(u)" [ngClass]="u.isClient ? 'client-activated-btn': 'client-btn' ">{{u.isClient ? 'UNMAKE' : 'MAKE'}} CLIENT</button>
+        <button (click)="changeIsManager(u)" [ngClass]="u.isManager ? 'manager-btn': 'manager-activated-btn' ">{{u.isManager ? 'UNMAKE' : 'MAKE'}} MANAGER</button>
+        <button (click)="changeIsAdmin(u)" [ngClass]="u.isAdmin ? 'admin-activated-btn': 'admin-btn' ">{{u.isAdmin ? 'UNMAKE' : 'MAKE'}} ADMIN</button>
+      </div>
+    </ng-container>
+  </div>
+</div>

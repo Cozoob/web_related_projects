@@ -1,0 +1,96 @@
+
+nav {
+  background: #f9f8fd;
+  font-family: "Lexend Exa", sans-serif;
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: inline-block;
+  border: 2px solid #ebecf1;
+  border-radius: 30px;
+  animation: slide-in 1s ease-out;
+}
+
+ul {
+  position: relative;
+  display: flex;
+  flex: 1 1 auto;
+  margin: 0;
+  padding: 0 30px;
+  list-style-type: none;
+}
+ul a li:not(:last-child) {
+  margin-right: 40px;
+}
+ul a li {
+  white-space: nowrap;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  padding: 10px;
+  transition: background 0.2s;
+  position: relative;
+}
+ul a {
+  color: black;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+
+ul a li:hover {
+  background: #ec4138;
+  border: 2px solid #f05749;
+  border-right: 2px solid #e02a21;
+  border-bottom: 2px solid #e02a21;
+}
+ul a:hover {
+  color: #f9f8fd;
+}
+
+ul a li p{
+  position: absolute;
+  top: -13px;
+  right: -13px;
+  font-size: 10px;
+  color: white;
+}
+
+.circle {
+  border-radius: 100%;
+  display: inline-block;
+  line-height: 24px;
+  height: 22px;
+  text-align: center;
+  width: 22px;
+  background-color: orangered;
+  z-index: 4;
+}
+
+.circle-blue{
+  background-color: #005580 !important;
+}
+
+@keyframes slide-in {
+  0% {
+    top: -50px;
+  }
+  40% {
+    top: 20px;
+  }
+  70% {
+    top: 10px;
+  }
+  100% {
+    top: 15px;
+  }
+}
+
+@media (max-width: 440px) {
+  ul{
+    flex-direction: column;
+  }
+  div{
+    margin-bottom: 100px;
+  }
+}

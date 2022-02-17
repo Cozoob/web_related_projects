@@ -1,0 +1,30 @@
+<div class="card-container">
+  <div class="pagination">
+    <pagination-controls (pageChange)="page = $event"></pagination-controls>
+    <div>
+      <button class="pagination-button" (click)="decrementPageSize()" [disabled]="pageSize === 1">-</button>
+      <span>Dishes per page: {{pageSize}}</span>
+      <button class="pagination-button" (click)="incrementPageSize()" [disabled]="pageSize === dishes.length">+</button>
+    </div>
+  </div>
+
+  <ng-container *ngFor="let dish of dishes | paginate: {itemsPerPage: pageSize, currentPage: page};" >
+    <div class="card u-clearfix" [ngClass]="{'green-shadow': dish.amount > 3, 'yellow-shadow': dish.amount > 0 && dish.amount <= 3, 'red-shadow': dish.amount === 0}" >
+      <div class="card-body">
+        <span class="card-type">Available <span class="card-number card-circle subtle">{{dish.amount}}</span></span>
+        <span class="card-type subtle">{{dish.cuisine | uppercase}}</span>
+        <h2 class="card-title">{{dish.name | uppercase}}</h2>
+        <span class="card-description subtle">Click the photo to see the dish's details!</span>
+        <div class="card-price" >{{dish.price | currency : 'USD':'symbol' : '1.2-2' }}</div>
+        <button type="button" class="delete-button" (click)="deleteDish(dish)" >DELETE</button>
+        <a [routerLink]="['//admin-modify-dish', dish.key]"> <button type="button" class="modify-button" >MODIFY</button></a>
+      </div>
+      <a [routerLink]="['/dish', dish.key]" routerLinkActive="active" class="card-link"><img src="{{dish.photoURL}}" alt="" class="card-media" /></a>
+    </div>
+    <div class="card-shadow"></div>
+  </ng-container>
+
+  <div class="pagination bottom-pagination">
+    <pagination-controls (pageChange)="page = $event"></pagination-controls>
+  </div>
+</div>

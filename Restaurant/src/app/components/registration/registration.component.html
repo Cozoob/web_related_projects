@@ -1,0 +1,31 @@
+<div class="main">
+  <p class="sign">Sign up</p>
+  <form class="form1" #f="ngForm" (ngSubmit)="submit(f)" [formGroup]="modelForm" autocomplete="off">
+    <div class="form-field">
+      <label>
+        <input class="un " type="text" placeholder="Username" formControlName="username" required/>
+        <span class="input-error" *ngIf="modelForm.controls['username'].invalid && modelForm.controls['username'].touched">Only letters and numbers min 3 and max 15 characters! *REQUIRED FIELD*</span>
+      </label>
+    </div>
+
+    <div class="form-field">
+      <label>
+        <input class="un " type="text" placeholder="Email" formControlName="email" required/>
+              <span class="input-error" *ngIf="modelForm.controls['email'].invalid && modelForm.controls['email'].touched">Only valid emails: name@email.com! *REQUIRED FIELD*</span>
+      </label>
+    </div>
+
+    <div class="form-field">
+      <label>
+        <input class="pass" type="password" placeholder="Password" formControlName="password" required/>
+        <span class="input-error" *ngIf="modelForm.controls['password'].invalid && modelForm.controls['password'].touched">Minimum 6 characters! *REQUIRED FIELD*</span>
+      </label>
+    </div>
+
+    <button class="submit" type="submit" [disabled]="!modelForm.valid" [ngClass]="!modelForm.valid ? '': 'button-active' ">Submit</button>
+
+    <div class="form-field">
+      <span class="input-error" *ngIf="isError">{{errorMessage}}</span>
+    </div>
+  </form>
+</div>

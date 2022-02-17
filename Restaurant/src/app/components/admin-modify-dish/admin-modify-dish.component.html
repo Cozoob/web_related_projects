@@ -1,0 +1,97 @@
+<div class="card-container" *ngIf="dish">
+  <div class="card u-clearfix" [ngClass]="{'green-shadow': dish.amount > 3, 'yellow-shadow': dish.amount > 0 && dish.amount <= 3, 'red-shadow': dish.amount === 0}" >
+    <div class="card-body">
+      <span class="card-type">Available <span class="card-number card-circle subtle">{{dish.amount}}</span></span>
+      <span class="card-type subtle">{{dish.cuisine | uppercase}}</span>
+      <h2 class="card-title">{{dish.name | uppercase}}</h2>
+      <span class="card-description subtle">{{dish.description}}</span>
+      <span class="card-description subtle">Category: {{dish.category | uppercase}}</span>
+      <div class="card-price">{{dish.price | currency : 'USD' : 'symbol' : '1.2-2'}}</div>
+    </div>
+    <img src="{{dish.photoURL}}" alt="" class="card-media" />
+  </div>
+  <div class="card-shadow"></div>
+</div>
+
+<div class="container">
+  <div>
+    <h4 class="title">Modify the dish!</h4>
+    <span class="sub-title">If you don't want to modify something then don't type anything into the field.</span>
+    <form #f="ngForm" (ngSubmit)="submit(f)" [formGroup]="modelForm" autocomplete="off">
+      <div class="form-field">
+        <label>
+          <input type="text" name="name" formControlName="name"/>
+          <span class="input-label">Name</span>
+          <span class="input-error" *ngIf="modelForm.controls['name'].invalid">Only letters and minimum 3 characters!</span>
+        </label>
+      </div>
+
+      <div class="form-field">
+        <label>
+          <input type="text" name="cuisine" formControlName="cuisine"/>
+          <span class="input-label">Cuisine</span>
+          <span class="input-error" *ngIf="modelForm.controls['cuisine'].invalid">Only letters and minimum 3 characters!</span>
+        </label>
+      </div>
+
+      <div class="form-field">
+        <label>
+          <input type="text" name="type" formControlName="type"/>
+          <span class="input-label">Type</span>
+          <span class="input-error" *ngIf="modelForm.controls['type'].invalid">Only letters and minimum 3 characters!</span>
+        </label>
+      </div>
+
+      <div class="form-field">
+        <label>
+          <input type="text" name="category" formControlName="category"/>
+          <span class="input-label">Category</span>
+          <span class="input-error" *ngIf="modelForm.controls['category'].invalid">Only letters and minimum 3 characters!</span>
+        </label>
+      </div>
+
+      <div class="form-field">
+        <label>
+          <textarea name="ingredients" formControlName="ingredients"></textarea>
+          <span class="input-label">Ingredients</span>
+          <span class="input-error" *ngIf="modelForm.controls['ingredients'].invalid">Maximum 50 characters!</span>
+        </label>
+      </div>
+
+      <div class="form-field">
+        <label>
+          <input type="text" name="amount" formControlName="amount"/>
+          <span class="input-label">Amount</span>
+          <span class="input-error" *ngIf="modelForm.controls['amount'].invalid">Only positive numbers!</span>
+        </label>
+      </div>
+
+      <div class="form-field">
+        <label>
+          <input type="text" name="price" formControlName="price"/>
+          <span class="input-label">Price</span>
+          <span class="input-error" *ngIf="modelForm.controls['price'].invalid">Only positive numbers!</span>
+        </label>
+      </div>
+
+      <div class="form-field">
+        <label>
+          <textarea name="description" formControlName="description"></textarea>
+          <span class="input-label">Description</span>
+          <span class="input-error" *ngIf="modelForm.controls['description'].invalid"> Maximum 100 characters!</span>
+        </label>
+      </div>
+
+      <div class="form-field">
+        <label>
+          <input type="text" name="photoURL" formControlName="photoURL"/>
+          <span class="input-label">Photo link</span>
+          <span class="input-error" *ngIf="modelForm.controls['photoURL'].invalid">Provide the link of the photo in the form of http/https://...</span>
+        </label>
+      </div>
+
+      <button type="submit" [disabled]="!modelForm.valid" [ngClass]="!modelForm.valid ? '': 'button-active' ">
+        MODIFY</button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+.stars li {
+  list-style: none;
+}
+
+.stars {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  cursor: pointer;
+  margin-bottom: 25px;
+  gap: 4px;
+  color: #b9b9b9;
+}
+
+.highlight {
+  color: gold;
+}
+
+.star-element{
+  font-size: 25px;
+}

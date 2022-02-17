@@ -1,0 +1,110 @@
+* {
+  font-family: "Lexend Exa", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.container{
+  display: flex;
+  justify-content: center;
+}
+
+.container div{
+  display: flex;
+  flex-direction: column;
+}
+
+.container div img{
+  align-self: center;
+  width: 70%;
+  height: auto;
+  border-radius: 10%;
+  border: 5px gray solid;
+}
+
+.container div span{
+  align-self: center;
+  padding: 5px;
+}
+
+.mapouter{
+  align-self: center;
+  margin-top: 10px;
+  position:relative;
+  text-align:right;
+  height:500px;
+  width:500px;
+}
+
+.gmap_canvas{
+  border: 1px solid black;
+  border-radius: 5%;
+  overflow:hidden;
+  background:none!important;
+  height:500px;
+  width:500px;
+}
+
+.btnSuperTitle{
+  color: white;
+  padding: 5px;
+  margin-bottom: 15px;
+  font-size: 10px;
+  background-color: #ec4138;
+  border-radius: 5%;
+}
+
+.title{
+  font-size: 30px;
+  margin-top: 15px;
+}
+
+
+.additional{
+  font-size: 16px;
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+
+@media(max-width: 790px){
+  .additional{
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .title{
+    font-size: 23px;
+    text-align: center;
+  }
+
+  .btnSuperTitle{
+    font-size: 8px;
+  }
+
+  .mapouter{
+    height:400px;
+    width:400px;
+  }
+
+  .gmap_canvas{
+    height:400px;
+    width:400px;
+  }
+}
+
+@media(max-width: 440px){
+  .mapouter{
+    height:300px;
+    width:300px;
+  }
+
+  .gmap_canvas{
+    height:300px;
+    width:300px;
+  }
+}
+
+.extra-gap{
+  margin-top: 70px;
+}

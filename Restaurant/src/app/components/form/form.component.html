@@ -1,0 +1,81 @@
+<div class="container">
+  <div>
+    <h4 class="title">Add a new dish!</h4>
+    <form #f="ngForm" (ngSubmit)="submit(f)" [formGroup]="modelForm" autocomplete="off">
+      <div class="form-field">
+        <label>
+          <input type="text" name="name" formControlName="name" required/>
+          <span class="input-label">Name*</span>
+          <span class="input-error" *ngIf="modelForm.controls['name'].invalid && modelForm.controls['name'].touched">Only letters and minimum 3 characters! *REQUIRED FIELD*</span>
+        </label>
+      </div>
+
+      <div class="form-field">
+        <label>
+        <input type="text" name="cuisine" formControlName="cuisine" required/>
+          <span class="input-label">Cuisine*</span>
+          <span class="input-error" *ngIf="modelForm.controls['cuisine'].invalid && modelForm.controls['cuisine'].touched">Only letters and minimum 3 characters! *REQUIRED FIELD*</span>
+        </label>
+      </div>
+
+      <div class="form-field">
+        <label>
+        <input type="text" name="type" formControlName="type" required/>
+          <span class="input-label">Type*</span>
+          <span class="input-error" *ngIf="modelForm.controls['type'].invalid && modelForm.controls['type'].touched">Only letters and minimum 3 characters! *REQUIRED FIELD*</span>
+        </label>
+      </div>
+
+      <div class="form-field">
+        <label>
+        <input type="text" name="category" formControlName="category" required/>
+          <span class="input-label">Category*</span>
+          <span class="input-error" *ngIf="modelForm.controls['category'].invalid && modelForm.controls['category'].touched">Only letters and minimum 3 characters! *REQUIRED FIELD*</span>
+        </label>
+      </div>
+
+      <div class="form-field">
+        <label>
+        <textarea name="ingredients" formControlName="ingredients"></textarea>
+          <span class="input-label">Ingredients</span>
+          <span class="input-error" *ngIf="modelForm.controls['ingredients'].invalid">Maximum 50 characters!</span>
+        </label>
+      </div>
+
+      <div class="form-field">
+        <label>
+        <input type="text" name="amount" formControlName="amount" required/>
+        <span class="input-label">Amount*</span>
+        <span class="input-error" *ngIf="modelForm.controls['amount'].invalid && modelForm.controls['amount'].touched">Only positive numbers! *REQUIRED FIELD*</span>
+        </label>
+      </div>
+
+      <div class="form-field">
+        <label>
+        <input type="text" name="price" formControlName="price" required/>
+        <span class="input-label">Price*</span>
+        <span class="input-error" *ngIf="modelForm.controls['price'].invalid && modelForm.controls['price'].touched">Only positive numbers! *REQUIRED FIELD*</span>
+        </label>
+      </div>
+
+      <div class="form-field">
+        <label>
+        <textarea name="description" formControlName="description"></textarea>
+          <span class="input-label">Description</span>
+          <span class="input-error" *ngIf="modelForm.controls['description'].invalid"> Maximum 100 characters!</span>
+        </label>
+      </div>
+
+      <div class="form-field">
+        <label>
+        <input type="text" name="photoURL" formControlName="photoURL"/>
+          <span class="input-label">Photo link</span>
+          <span class="input-error" *ngIf="modelForm.controls['photoURL'].invalid">Provide the link of the photo in the form of http/https://...</span>
+        </label>
+      </div>
+
+      <button type="submit" [disabled]="!modelForm.valid" [ngClass]="!modelForm.valid ? '': 'button-active' ">
+        ADD</button>
+    </form>
+  </div>
+</div>

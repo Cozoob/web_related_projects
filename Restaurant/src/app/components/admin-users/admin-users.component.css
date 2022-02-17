@@ -1,0 +1,125 @@
+
+.wrapper{
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.container{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.user-card{
+  padding: 5px 10px;
+  border-radius: 4px;
+  border: 1px solid whitesmoke;
+}
+
+button{
+  padding: 5px 10px;
+  margin-left: 15px;
+}
+
+button:hover{
+  cursor: pointer;
+}
+
+.ban-button{
+  color: white;
+  border: none;
+  border-radius: 10px;
+  background-color: #F22738;
+}
+
+.ban-button:hover{
+  background-color: #b71f2b;
+}
+
+.ban-activated-button{
+  color: white;
+  border: none;
+  border-radius: 10px;
+  background-color: #b71f2b;
+}
+
+.ban-activated-button:hover{
+  background-color: #F22738;
+}
+
+.admin-btn{
+  color: white;
+  border: none;
+  border-radius: 10px;
+  background-color: #2749f2;
+}
+
+.admin-btn:hover{
+  background-color: #276ef2;
+}
+
+.admin-activated-btn{
+  color: white;
+  border: none;
+  border-radius: 10px;
+  background-color: #276ef2;
+}
+
+.admin-activated-btn:hover{
+  background-color: #2749f2;
+}
+
+
+.manager-btn{
+  color: white;
+  border: none;
+  border-radius: 10px;
+  background-color: #507e1d;
+}
+
+.manager-btn:hover{
+  background-color: #177a20;
+}
+
+.manager-activated-btn{
+  color: white;
+  border: none;
+  border-radius: 10px;
+  background-color: #177a20;
+}
+
+.manager-activated-btn:hover{
+  background-color: #507e1d;
+}
+
+.client-btn{
+  color: white;
+  border: none;
+  border-radius: 10px;
+  background-color: #9a8824;
+}
+
+.client-btn:hover{
+  background-color: #7a5217;
+}
+
+.client-activated-btn{
+  color: white;
+  border: none;
+  border-radius: 10px;
+  background-color: #7a5217;
+}
+
+.client-activated-btn:hover{
+  background-color: #9a8824;
+}
+
+@media (max-width: 610px) {
+  .user-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}

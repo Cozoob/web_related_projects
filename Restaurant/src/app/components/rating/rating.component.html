@@ -1,0 +1,4 @@
+<div class="stars">
+  <li class="star-element" (click)="rate(star)" *ngFor="let star of stars" [ngClass]="{'highlight' : (star <= value)}" >&#9733;</li>
+</div>
+<p>Rating: {{this.dish.rating}} ({{this.dish.amountOfRatings}})</p>

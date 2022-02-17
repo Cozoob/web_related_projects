@@ -1,0 +1,21 @@
+<div class="wrapper">
+  <div class="card-container">
+    <ng-container *ngFor="let elem of dishesToShowArray" >
+      <div class="card u-clearfix" >
+        <div class="card-body">
+          <span class="card-type">Ordered <span class="card-number card-circle subtle">{{counter.get(elem[0].key)}}</span></span>
+          <span class="card-type subtle">{{elem[0].cuisine | uppercase}}</span>
+          <h2 class="card-title">{{elem[0].name | uppercase}}</h2>
+          <span class="card-description subtle">{{elem[0].description}}</span>
+          <div class="card-price" >{{elem[0].price * elem[1] | currency : this.currency : 'symbol' : '1.2-2' }}</div>
+        </div>
+        <a [routerLink]="['/dish', elem[0].key]" routerLinkActive="active" class="card-link"><img src="{{elem[0].photoURL}}" alt="" class="card-media" /></a>
+      </div>
+      <div class="card-shadow"></div>
+    </ng-container>
+  </div>
+  <div class="cost-of-order">
+    <p *ngIf="costOfOrder===0" >EMPTY BASKET!</p>
+    Sum: {{costOfOrder | currency : this.currency : 'symbol' : '1.2-2' }}
+  </div>
+</div>

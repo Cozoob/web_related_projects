@@ -1,0 +1,66 @@
+<div class="card-container" *ngIf="dish">
+  <div class="card u-clearfix" [ngClass]="{'green-shadow': dish.amount > 3, 'yellow-shadow': dish.amount > 0 && dish.amount <= 3, 'red-shadow': dish.amount === 0}" >
+    <div class="card-body">
+      <span class="card-type">Available <span class="card-number card-circle subtle">{{dish.amount}}</span></span>
+      <span class="card-type subtle">{{dish.cuisine | uppercase}}</span>
+      <h2 class="card-title">{{dish.name | uppercase}}</h2>
+      <span class="card-description subtle">{{dish.description}}</span>
+      <span class="card-description subtle">Category: {{dish.category | uppercase}}</span>
+      <div class="card-price">{{dish.price | currency : this.currency : 'symbol' : '1.2-2'}}</div>
+      <span class="card-tag">
+        <button type="button" [ngClass]="{'disable-button': dish.amount === 0}"  (click)="dish.amount > 0 ? incrementOrderedCounter(dish): null">+</button>
+        {{orderCounter}}
+        <button type="button" [ngClass]="{'disable-button': orderCounter === 0}" (click)="orderCounter > 0 ? decrementOrderedCounter(dish): null">-</button>
+      </span>
+      <app-rating [dish]="dish" *ngIf="(orderCounter > 0 || (currUser && currUser.isAdmin)) && currUser && !currUser.isBanned && !currUser.isManager"></app-rating>
+      <a routerLink="/menu" routerLinkActive="active"><button type="button" class="back-button">MENU</button></a>
+      <a routerLink="/basket" routerLinkActive="active"><button type="button" class="back-button extra-margin">BASKET</button></a>
+    </div>
+    <img src="{{dish.photoURL}}" alt="" class="card-media" />
+  </div>
+  <div class="card-shadow"></div>
+
+  <ng-container *ngFor="let comment of comments" >
+    <div class="add-comment">
+      <div class="comment">
+        <span class="comment-nick">{{comment.user_name}}</span>
+        <span class="comment-title">{{comment.title}}</span>
+        <span class="comment-content">{{comment.content}}</span>
+        <span class="comment-date" *ngIf="comment.date != ''">{{comment.date}}</span>
+      </div>
+    </div>
+  </ng-container>
+
+  <div class="container add-comment" *ngIf="(orderCounter > 0 || (currUser && (currUser.isManager || currUser.isAdmin))) && currUser && !currUser.isBanned">
+    <div>
+      <form #f="ngForm" (ngSubmit)="submit(f)" [formGroup]="modelForm" autocomplete="off">
+
+        <div class="form-field">
+          <label>
+            <input type="text" name="title" formControlName="title" required/>
+            <span class="input-label">Title*</span>
+            <span class="input-error" *ngIf="modelForm.controls['title'].invalid && modelForm.controls['title'].touched">Only letters and minimum 3 characters! *REQUIRED FIELD*</span>
+          </label>
+        </div>
+
+        <div class="form-field">
+          <label>
+            <textarea name="content" formControlName="content" required></textarea>
+            <span class="input-label">Comment*</span>
+            <span class="input-error" *ngIf="modelForm.controls['content'].invalid && modelForm.controls['content'].touched">Minimum 50 and maximum 500 characters! *REQUIRED FIELD*</span>
+          </label>
+        </div>
+
+        <div class="form-field">
+          <label>
+            <input type="checkbox" name="date" formControlName="date"/>
+            <span class="input-label">Add date</span>
+          </label>
+        </div>
+
+        <button type="submit" [disabled]="!modelForm.valid" [ngClass]="!modelForm.valid ? '': 'button-active' ">
+          ADD A COMMENT</button>
+      </form>
+    </div>
+  </div>
+</div>

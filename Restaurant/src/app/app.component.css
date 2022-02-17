@@ -1,0 +1,15 @@
+.container{
+  display: flex;
+  flex-direction: column;
+}
+
+.container app-navigation{
+  margin-bottom: 60px;
+}
+
+
+@media (max-width: 440px) {
+  .container app-navigation{
+    margin-bottom: 160px;
+  }
+}
