@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Explorer</title>
+    <style>
+        :root{
+            --bg-body-color: #151D3B;
+            --bg-div-color: #D82148;
+            --bg-div-hover-color: #9e1834;
+            --font-h1-color: #DADBBD;
+            --font-div-color: #DADBBD;
+        }
+
+        *{
+            box-sizing: border-box;
+        }
+
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: var(--bg-body-color);
+        }
+
+        h1{
+            font-size: 1.5rem;
+            color: var(--font-h1-color);
+            user-select: none;
+        }
+
+        nav{
+            display: flex;
+            justify-content: stretch;
+            align-items: stretch;
+            column-gap: 1rem;
+            overflow: hidden;
+            flex-wrap: wrap;
+        }
+
+        div{
+            padding: 3rem;
+            color: var(--font-div-color);
+            background-color: var(--bg-div-color);
+            font-weight: 900;
+            width: 200px;
+            height: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            user-select: none;
+        }
+
+        div:hover{
+            background-color: var(--bg-div-hover-color);
+            cursor: pointer;
+        }
+
+        a, a:visited{
+            color: inherit;
+            text-decoration: inherit;
+        }
+
+
+    </style>
+</head>
+<body>
+    <h1>Choose the site</h1>
+    <nav>
+        <a href="animated-sidebar-menu-website">
+            <div>
+               Sidebar menu
+            </div>
+        </a>
+        <a href="business_cards">
+            <div>
+                Business cards
+            </div>
+        </a>
+	<a href="city-cards-website">
+            <div>
+                City cards
+            </div>
+        </a>
+	<a href="exciting-places-wewbsite">
+            <div>
+                Exciting places
+            </div>
+        </a>
+	<a href="flash-cards-website">
+            <div>
+                Flash cards
+            </div>
+        </a>
+	<a href="zombie_game">
+            <div>
+                Zombie game
+            </div>
+        </a>
+    </nav>
+</body>
+</html>
